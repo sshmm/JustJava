@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
 
     /**
@@ -34,12 +34,33 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
        // displayPrice(quantity * 5);
-        int price = quantity * 5;
-        String priceMessage = "Total: $"+ price;
-        priceMessage += "\nThank you!";
+        int price = calculatePrice();
+        String priceMessage = createOrderSummary(price);
+       // priceMessage += "\nThank you!";
         displayMessage(priceMessage);
+
     }
 
+    /**
+     * Calculates the price of the order.
+     *
+     * @return total price
+     */
+    private int calculatePrice(){
+        return quantity * 5;
+    }
+
+    /**
+     *
+     * @param price the total price of the order
+     * @return the order summary "Name , quantity , price"
+     */
+    private String createOrderSummary(int price){
+        String message = "Name: Kaptain Kunal\n" ;
+        message += "Quantity:" + quantity +"\n" ;
+        message += "Total: $" + price + "\n" + "Thank you!";
+        return message;
+    }
     /**
      * This method is called when the increment button is clicked.
      */
@@ -68,8 +89,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given price on the screen.
      */
+    /*
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
+    }*/
+
+
 }
