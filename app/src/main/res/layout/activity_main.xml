@@ -7,11 +7,32 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/Topping_Text_View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Topping"
+        android:textAllCaps="true"
+        android:textColor="#8b8989"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="24dp"
+        android:text="Whipped Cream"
+        android:textSize="16sp" />
+
+
+    <TextView
         android:id="@+id/title_text_view1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quantity"
         android:textAllCaps="true"
+        android:layout_marginTop="16dp"
         android:textSize="16sp"
         android:textColor="#8b8989"
         android:textStyle="bold" />
